@@ -1,6 +1,6 @@
 ﻿using Leopotam.EcsLite;
 
-public class MoveSystem : IEcsRunSystem
+public class PongSystem : IEcsRunSystem
 {
     public void Run(IEcsSystems systems)
     {

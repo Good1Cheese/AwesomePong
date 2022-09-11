@@ -6,12 +6,14 @@ public class GameInstaller : MonoInstaller
 {
     [SerializeField] private Player_SO _player_SO;
     [SerializeField] private Enemy_SO _enemy_SO;
+    [SerializeField] private Pong_SO _pong_SO;
 
     public override void InstallBindings()
     {
         BindGame();
         BindPlayer();
         BindEnemy();
+        BindPong();
     }
 
     private void BindGame()
@@ -44,6 +46,15 @@ public class GameInstaller : MonoInstaller
             .AsSingle();
 
         Container.BindFactory<Enemy, Enemy.Factory>()
+            .AsSingle();
+    }
+
+    private void BindPong()
+    {
+        Container.BindInstance(_pong_SO)
+            .AsSingle();
+
+        Container.BindFactory<Pong, Pong.Factory>()
             .AsSingle();
     }
 }

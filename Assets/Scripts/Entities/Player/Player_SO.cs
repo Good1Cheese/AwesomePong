@@ -3,5 +3,6 @@
 [CreateAssetMenu(fileName = "new Player_SO", menuName = "Entities/Player")]
 public class Player_SO : Entity_SO
 {
-    public Moveable Moveable;
+    public InputComponent inputComponent;
+    public Moveable moveable;
 }

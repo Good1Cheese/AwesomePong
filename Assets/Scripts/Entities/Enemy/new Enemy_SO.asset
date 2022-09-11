@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: new Enemy_SO
   m_EditorClassIdentifier: 
   prefab: {fileID: 3225817621139853652, guid: 3a064f4ec9086d043b19b33546fbc03f, type: 3}
-  position: {x: 20, y: 0, z: 0}
-  rotation: {x: 0, y: 0, z: 0, w: 0}
+  startPosition: {x: 20, y: 0, z: 0}
+  startRotation: {x: 0, y: 0, z: 0, w: 0}

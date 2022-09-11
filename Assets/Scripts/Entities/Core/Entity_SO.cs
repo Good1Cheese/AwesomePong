@@ -3,11 +3,11 @@
 public abstract class Entity_SO : ScriptableObject
 {
     public GameObject prefab;
-    public Vector3 position;
-    public Quaternion rotation;
+    public Vector3 startPosition;
+    public Quaternion startRotation;
 
     public GameObject Spawn()
     {
-        return Instantiate(prefab, position, rotation);
+        return Instantiate(prefab, startPosition, startRotation);
     }
 }

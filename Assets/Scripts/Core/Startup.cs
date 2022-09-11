@@ -29,7 +29,7 @@ public class Startup : MonoBehaviour
 
     private void OnDestroy()
     {
-        _world?.Destroy();
-        _systems?.Destroy();
+        _world.Destroy();
+        _systems.Destroy();
     }
 }
