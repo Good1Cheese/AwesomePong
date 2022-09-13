@@ -5,14 +5,11 @@ using UnityEngine;
 public struct Moveable
 {
     [SerializeField] 
-    private Vector2 _velocity;
+    private float _velocity;
 
-    [SerializeField]
-    private Vector2 _verticalMoveLimit;
-
-    public Vector2 Input { get; set; }
+    public Vector3 Move { get; set; }
+    public Vector3 Direction { get; set; }
     public Transform Transform { get; set; }
 
-    public Vector2 Velocity => _velocity;
-    public Vector2 VerticalMoveLimit => _verticalMoveLimit;
+    public float Velocity => _velocity;
 }

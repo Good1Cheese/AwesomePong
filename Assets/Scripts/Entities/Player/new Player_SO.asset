@@ -16,5 +16,7 @@ MonoBehaviour:
   startPosition: {x: -20, y: 0, z: 0}
   startRotation: {x: 0, y: 0, z: 0, w: 0}
   moveable:
-    _velocity: {x: 0, y: 0.05}
-    _verticalMoveLimit: {x: -15, y: 15}
+    _velocity: 15
+  moveLimit:
+    _maxMove: 15
+    _minMove: -15

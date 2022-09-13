@@ -13,8 +13,8 @@ public class MoveSystem : IEcsRunSystem
         {
             ref Moveable moveable = ref world.Get<Moveable>(entity);
 
-            var move = moveable.Velocity * moveable.Input;
-            moveable.Transform.Translate(move.x, 0, move.y);
+            moveable.Move = moveable.Velocity * Time.deltaTime * moveable.Direction;
+            moveable.Transform.Translate(moveable.Move);
         }
     }
 }

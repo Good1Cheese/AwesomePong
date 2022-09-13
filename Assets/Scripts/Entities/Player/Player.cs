@@ -22,13 +22,15 @@ public class Player : SpawnableEntity
         player_SO.moveable.Transform = _gameObject.transform;
 
         _world.Add(entity, player_SO.moveable);
+
+        _world.Add(entity, player_SO.moveLimit);
     }
 
     protected override void AddSystems()
     {
-        _systems.AddIfDoesnNotHas<InputSystem>();
-        _systems.AddIfDoesnNotHas<MoveSystem>();
-        _systems.AddIfDoesnNotHas<VerticalMoveLimitSystem>();
+        _systems.AddNewIfDoesnNotHas<InputSystem>();
+        _systems.AddNewIfDoesnNotHas<MoveSystem>();
+        _systems.AddNewIfDoesnNotHas<ZCoordinateLimitationSystem>();
     }
 
     public class Factory : PlaceholderFactory<Player> { }

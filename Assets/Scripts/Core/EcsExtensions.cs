@@ -12,6 +12,13 @@ public static class EcsExtensions
         component = existing;
     }
 
+    public static ref T Add<T>(this EcsWorld ecsWorld, int entity) where T : struct
+    {
+        EcsPool<T> ecsPool = ecsWorld.GetPool<T>();
+
+        return ref ecsPool.Add(entity);
+    }
+
     public static ref T Get<T>(this EcsWorld ecsWorld, int entity) where T : struct
     {
         EcsPool<T> ecsPool = ecsWorld.GetPool<T>();
@@ -19,7 +26,7 @@ public static class EcsExtensions
         return ref ecsPool.Get(entity);
     }
 
-    public static void AddIfDoesnNotHas<T>(this EcsSystems ecsSystems) where T : class, IEcsSystem, new()
+    public static void AddNewIfDoesnNotHas<T>(this EcsSystems ecsSystems) where T : class, IEcsSystem, new()
     {
         if (ecsSystems.Has<T>()) { return; }
 
