@@ -7,9 +7,9 @@ public class ZCoordinateLimitationSystem : IEcsRunSystem
     {
         EcsWorld world = systems.GetWorld();
 
-        var inputFilter = world.Filter<Moveable>().Inc<PositionLimitation>().End();
+        var filter = world.Filter<Moveable>().Inc<PositionLimitation>().End();
 
-        foreach (int entity in inputFilter)
+        foreach (int entity in filter)
         {
             ref Moveable moveable = ref world.Get<Moveable>(entity);
             ref PositionLimitation limit = ref world.Get<PositionLimitation>(entity);

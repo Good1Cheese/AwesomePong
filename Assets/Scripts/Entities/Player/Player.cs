@@ -28,9 +28,9 @@ public class Player : SpawnableEntity
 
     protected override void AddSystems()
     {
-        _systems.AddNewIfDoesnNotHas<InputSystem>();
-        _systems.AddNewIfDoesnNotHas<MoveSystem>();
-        _systems.AddNewIfDoesnNotHas<ZCoordinateLimitationSystem>();
+        _systems.AddNewIfThereIsNot<InputSystem>();
+        _systems.AddNewIfThereIsNot<MoveSystem>();
+        _systems.AddNewIfThereIsNot<ZCoordinateLimitationSystem>();
     }
 
     public class Factory : PlaceholderFactory<Player> { }

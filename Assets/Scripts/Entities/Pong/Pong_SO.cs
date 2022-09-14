@@ -4,4 +4,5 @@
 public class Pong_SO : Entity_SO
 {
     public Moveable moveable;
+    public PongComponent pongComponent;
 }

@@ -1,4 +1,4 @@
 ﻿public struct Triggerable
 {
-    public TriggerDetector Detector { get; set; }
+    public TriggerDetector TriggerDetector { get; set; }
 }

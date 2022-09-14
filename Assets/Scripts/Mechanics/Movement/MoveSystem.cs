@@ -7,9 +7,9 @@ public class MoveSystem : IEcsRunSystem
     {
         EcsWorld world = systems.GetWorld();
 
-        var inputFilter = world.Filter<Moveable>().End();
+        var filter = world.Filter<Moveable>().End();
 
-        foreach (int entity in inputFilter)
+        foreach (int entity in filter)
         {
             ref Moveable moveable = ref world.Get<Moveable>(entity);
 

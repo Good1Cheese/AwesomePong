@@ -15,24 +15,30 @@ public class Pong : SpawnableEntity
         var pong_SO = (Pong_SO)_entity_SO;
 
         pong_SO.moveable.Transform = _gameObject.transform;
-
         pong_SO.moveable.Direction = new Vector3(0.25f, 0, 1);
         _world.Add(entity, pong_SO.moveable);
 
-        pong_SO.moveable.Transform = _gameObject.transform;
+        ref PongComponent pongComponent = ref _world.Add(entity, pong_SO.pongComponent);
+        pongComponent.AudioSource = _gameObject.GetComponent<AudioSource>();
 
         ref Collidable collidable = ref _world.Add<Collidable>(entity);
-        collidable.Detector = _gameObject.GetComponent<CollisonDetector>();
+        collidable.CollisionDetector = _gameObject.GetComponent<CollisonDetector>();
 
         ref Triggerable triggerable = ref _world.Add<Triggerable>(entity);
-        triggerable.Detector = _gameObject.GetComponent<TriggerDetector>();
+        triggerable.TriggerDetector = _gameObject.GetComponent<TriggerDetector>();
     }
 
     protected override void AddSystems()
     {
-        _systems.AddNewIfDoesnNotHas<PongReflectionSystem>();
-        _systems.AddNewIfDoesnNotHas<PongGoalSystem>();
-        _systems.AddNewIfDoesnNotHas<MoveSystem>();
+        _systems.AddNewIfThereIsNot<CollisionDetectSystem>();
+        _systems.AddNewIfThereIsNot<TriggerDetectSystem>();
+        _systems.AddNewIfThereIsNot<WallBounceSystem>();
+        _systems.AddNewIfThereIsNot<WallBounceSoundSystem>();
+        _systems.AddNewIfThereIsNot<ScoreSystem>();
+        _systems.AddNewIfThereIsNot<ScoreSoundSystem>();
+        _systems.AddNewIfThereIsNot<MoveSystem>();
+        _systems.AddNewIfThereIsNot<MarkerDeleteSystem<CollidedMarker>>();
+        _systems.AddNewIfThereIsNot<MarkerDeleteSystem<TriggeredMarker>>();
     }
 
     public class Factory : PlaceholderFactory<Pong> { }
