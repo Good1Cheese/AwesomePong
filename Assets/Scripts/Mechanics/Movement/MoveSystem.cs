@@ -14,6 +14,7 @@ public class MoveSystem : IEcsRunSystem
             ref Moveable moveable = ref world.Get<Moveable>(entity);
 
             moveable.Move = moveable.Velocity * Time.deltaTime * moveable.Direction;
+
             moveable.Transform.Translate(moveable.Move);
         }
     }

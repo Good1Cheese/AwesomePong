@@ -1,5 +1,6 @@
 ﻿using Leopotam.EcsLite;
 using System.Linq;
+using Unity.VisualScripting;
 
 public static class EcsExtensions
 {

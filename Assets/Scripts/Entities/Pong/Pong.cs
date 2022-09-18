@@ -1,6 +1,6 @@
 ﻿using Leopotam.EcsLite;
-using UnityEngine;
 using Zenject;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class Pong : SpawnableEntity
 {
@@ -14,31 +14,31 @@ public class Pong : SpawnableEntity
         int entity = _world.NewEntity();
         var pong_SO = (Pong_SO)_entity_SO;
 
-        pong_SO.moveable.Transform = _gameObject.transform;
-        pong_SO.moveable.Direction = new Vector3(0.25f, 0, 1);
         _world.Add(entity, pong_SO.moveable);
+        _world.Add(entity, pong_SO.pongSounds);
+        _world.Add(entity, pong_SO.triggerable);
 
-        ref PongComponent pongComponent = ref _world.Add(entity, pong_SO.pongComponent);
-        pongComponent.AudioSource = _gameObject.GetComponent<AudioSource>();
-
-        ref Collidable collidable = ref _world.Add<Collidable>(entity);
-        collidable.CollisionDetector = _gameObject.GetComponent<CollisonDetector>();
-
-        ref Triggerable triggerable = ref _world.Add<Triggerable>(entity);
-        triggerable.TriggerDetector = _gameObject.GetComponent<TriggerDetector>();
+        _world.Add<GameStartedMarker>(entity);
+        _world.Add<PongMarker>(entity);
     }
 
     protected override void AddSystems()
     {
-        _systems.AddNewIfThereIsNot<CollisionDetectSystem>();
-        _systems.AddNewIfThereIsNot<TriggerDetectSystem>();
+        _systems.AddNewIfThereIsNot<TriggerDetectorSystem>();
+        _systems.AddNewIfThereIsNot<GameResetSystem>();
+        _systems.AddNewIfThereIsNot<DirectionResetSystem>();
+        _systems.AddNewIfThereIsNot<PositionResetSystem>();
+        _systems.AddNewIfThereIsNot<PaddleBounceSystem>();
         _systems.AddNewIfThereIsNot<WallBounceSystem>();
-        _systems.AddNewIfThereIsNot<WallBounceSoundSystem>();
-        _systems.AddNewIfThereIsNot<ScoreSystem>();
-        _systems.AddNewIfThereIsNot<ScoreSoundSystem>();
+        _systems.AddNewIfThereIsNot<BounceSoundSystem>();
+        _systems.AddNewIfThereIsNot<GateBounceSystem>();
+        _systems.AddNewIfThereIsNot<GateBounceSoundSystem>();
         _systems.AddNewIfThereIsNot<MoveSystem>();
-        _systems.AddNewIfThereIsNot<MarkerDeleteSystem<CollidedMarker>>();
         _systems.AddNewIfThereIsNot<MarkerDeleteSystem<TriggeredMarker>>();
+        _systems.AddNewIfThereIsNot<MarkerDeleteSystem<WallTriggeredMarker>>();
+        _systems.AddNewIfThereIsNot<MarkerDeleteSystem<PaddleTriggeredMarker>>();
+        _systems.AddNewIfThereIsNot<MarkerDeleteSystem<GateTriggeredMarker>>();
+        _systems.AddNewIfThereIsNot<MarkerDeleteSystem<GameStartedMarker>>();
     }
 
     public class Factory : PlaceholderFactory<Pong> { }

@@ -16,9 +16,7 @@ public class InputSystem : IEcsRunSystem
 
             Vector2 input = inputComponent.Main.ReadValue<Vector2>();
 
-            Vector3 vector3Input = new(input.x, 0, input.y);
-
-            moveable.Direction = vector3Input;
+            moveable.Direction = input;
         }
     }
 }

@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ca703d35e2b8db4f82315bb58501d27, type: 3}
   m_Name: new Enemy_SO
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3225817621139853652, guid: 3a064f4ec9086d043b19b33546fbc03f, type: 3}
-  startPosition: {x: 20, y: 0, z: 0}
+  prefab: {fileID: 5498826625282164859, guid: 4127e8708f76ac7408a60c5f90ac4386, type: 3}
+  startPosition: {x: 20, y: 0}
   startRotation: {x: 0, y: 0, z: 0, w: 0}
+  moveable:
+    _velocity: 0.75
+  moveLimit:
+    _max: 15
+    _min: -15

@@ -22,9 +22,9 @@ public class Game : Entity
 
     public override void Init()
     {
+        _pong.Init();
         _player.Init();
         _enemy.Init();
-        _pong.Init();
     }
 
     public class Factory : PlaceholderFactory<Game> { }

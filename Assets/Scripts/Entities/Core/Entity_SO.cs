@@ -1,13 +1,11 @@
-﻿using UnityEngine;
+﻿using Leopotam.EcsLite;
+using UnityEngine;
 
 public abstract class Entity_SO : ScriptableObject
 {
     public GameObject prefab;
-    public Vector3 startPosition;
+    public Vector2 startPosition;
     public Quaternion startRotation;
 
-    public GameObject Spawn()
-    {
-        return Instantiate(prefab, startPosition, startRotation);
-    }
+    public abstract void Init(GameObject gameObject);
 }

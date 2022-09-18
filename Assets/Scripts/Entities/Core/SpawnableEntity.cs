@@ -13,12 +13,23 @@ public abstract class SpawnableEntity : Entity
         _entity_SO = entity_SO;
     }
 
+    public GameObject Spawn()
+    {
+        return Object.Instantiate(_entity_SO.prefab, _entity_SO.startPosition, _entity_SO.startRotation);
+    }
+
     public override void Init()
     {
-        _gameObject = _entity_SO.Spawn();
+        _gameObject = Spawn();
 
+        InitComponents();
         AddComponents();
         AddSystems();
+    }
+
+    protected void InitComponents()
+    {
+        _entity_SO.Init(_gameObject);
     }
 
     protected abstract void AddComponents();

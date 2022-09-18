@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbcd8d9dfc68cba40aaec202b062d09d, type: 3}
   m_Name: new Pong_SO
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8982759532917097067, guid: 32103047dcd7cc94296b49e26b7b2892, type: 3}
-  startPosition: {x: 0, y: 0, z: 0}
+  prefab: {fileID: 3990536737805802147, guid: 605e71f389cf5924187b124b88df3c29, type: 3}
+  startPosition: {x: 0, y: 0}
   startRotation: {x: 0, y: 0, z: 0, w: 0}
   moveable:
-    _velocity: 10
-  pongComponent:
+    _velocity: 15
+  pongSounds:
     _wallBounceClip: {fileID: 8300000, guid: ae0fabefc0e941143a9bead92c7034e6, type: 3}
     _scoreClip: {fileID: 8300000, guid: ab1f1c59ab6b328448f5e58548e4bd2b, type: 3}

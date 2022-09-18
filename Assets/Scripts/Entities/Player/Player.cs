@@ -13,24 +13,16 @@ public class Player : SpawnableEntity
         int entity = _world.NewEntity();
         var player_SO = (Player_SO)_entity_SO;
 
-        PlayerControls controls = new();
-        player_SO.inputComponent.Controls = controls;
-        controls.Enable();
-
-        _world.Add(entity, player_SO.inputComponent);
-
-        player_SO.moveable.Transform = _gameObject.transform;
-
         _world.Add(entity, player_SO.moveable);
-
         _world.Add(entity, player_SO.moveLimit);
+        _world.Add(entity, player_SO.inputComponent);
     }
 
     protected override void AddSystems()
     {
         _systems.AddNewIfThereIsNot<InputSystem>();
         _systems.AddNewIfThereIsNot<MoveSystem>();
-        _systems.AddNewIfThereIsNot<ZCoordinateLimitationSystem>();
+        _systems.AddNewIfThereIsNot<VerticalPositionLimitationSystem>();
     }
 
     public class Factory : PlaceholderFactory<Player> { }
