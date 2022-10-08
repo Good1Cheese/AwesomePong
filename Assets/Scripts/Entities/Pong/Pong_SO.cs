@@ -1,5 +1,4 @@
-﻿using Leopotam.EcsLite;
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "new Pong_SO", menuName = "Entities/Pong")]
 public class Pong_SO : Entity_SO
@@ -15,6 +14,6 @@ public class Pong_SO : Entity_SO
 
         pongSounds.AudioSource = gameObject.GetComponent<AudioSource>();
 
-        triggerable.Detector = gameObject.GetComponent<TriggerDetector>();
+        triggerable.Detector = gameObject.GetComponent<TriggerDetection>();
     }
 }

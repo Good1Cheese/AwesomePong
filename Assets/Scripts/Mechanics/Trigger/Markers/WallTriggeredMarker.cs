@@ -1,4 +1,4 @@
-﻿public struct WallTriggeredMarker
+﻿public struct BorderTriggeredMarker
 {
 
 }

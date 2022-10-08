@@ -29,16 +29,10 @@ public class Pong : SpawnableEntity
         _systems.AddNewIfThereIsNot<DirectionResetSystem>();
         _systems.AddNewIfThereIsNot<PositionResetSystem>();
         _systems.AddNewIfThereIsNot<PaddleBounceSystem>();
-        _systems.AddNewIfThereIsNot<WallBounceSystem>();
+        _systems.AddNewIfThereIsNot<BorderBounceSystem>();
         _systems.AddNewIfThereIsNot<BounceSoundSystem>();
-        _systems.AddNewIfThereIsNot<GateBounceSystem>();
         _systems.AddNewIfThereIsNot<GateBounceSoundSystem>();
         _systems.AddNewIfThereIsNot<MoveSystem>();
-        _systems.AddNewIfThereIsNot<MarkerDeleteSystem<TriggeredMarker>>();
-        _systems.AddNewIfThereIsNot<MarkerDeleteSystem<WallTriggeredMarker>>();
-        _systems.AddNewIfThereIsNot<MarkerDeleteSystem<PaddleTriggeredMarker>>();
-        _systems.AddNewIfThereIsNot<MarkerDeleteSystem<GateTriggeredMarker>>();
-        _systems.AddNewIfThereIsNot<MarkerDeleteSystem<GameStartedMarker>>();
     }
 
     public class Factory : PlaceholderFactory<Pong> { }

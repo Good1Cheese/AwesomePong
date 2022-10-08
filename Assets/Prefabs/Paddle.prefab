@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5498826625282164858}
   - component: {fileID: 2399368990142964798}
   - component: {fileID: 3188556315271638432}
+  - component: {fileID: 8507282302223159282}
   m_Layer: 0
   m_Name: Paddle
   m_TagString: Player
@@ -133,3 +134,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8507282302223159282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5498826625282164859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3de052314209872459b24c5f7cd9cb1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -7,7 +7,7 @@ public class DirectionResetSystem : IEcsRunSystem
     {
         EcsWorld world = systems.GetWorld();
 
-        var filter = world.Filter<Moveable>().Inc<GameStartedMarker>().End();
+        var filter = world.Filter<PongMarker>().Inc<Moveable>().Inc<GameStartedMarker>().End();
 
         foreach (int entity in filter)
         {
@@ -15,7 +15,7 @@ public class DirectionResetSystem : IEcsRunSystem
 
             Vector2 randomPosition = Random.insideUnitCircle;
 
-            moveable.Direction = randomPosition.normalized;
+            moveable.Direction = Vector2.right;
         }
     }
 }

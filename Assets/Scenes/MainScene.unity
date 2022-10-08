@@ -446,6 +446,7 @@ GameObject:
   - component: {fileID: 478502871}
   - component: {fileID: 478502870}
   - component: {fileID: 478502869}
+  - component: {fileID: 478502872}
   m_Layer: 0
   m_Name: Bottom
   m_TagString: Wall
@@ -567,6 +568,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &478502872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478502867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd5598aaa04c444fb06e807de31006e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &489430140
 GameObject:
   m_ObjectHideFlags: 0
@@ -757,6 +770,7 @@ GameObject:
   - component: {fileID: 985250590}
   - component: {fileID: 985250592}
   - component: {fileID: 985250591}
+  - component: {fileID: 985250593}
   m_Layer: 0
   m_Name: Upper
   m_TagString: Wall
@@ -878,6 +892,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &985250593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985250588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd5598aaa04c444fb06e807de31006e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1224044813
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,6 +915,7 @@ GameObject:
   - component: {fileID: 1224044814}
   - component: {fileID: 1224044816}
   - component: {fileID: 1224044815}
+  - component: {fileID: 1224044817}
   m_Layer: 0
   m_Name: Right
   m_TagString: Gate
@@ -958,6 +985,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1224044817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224044813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f45de294241ea14687c984bc34c687a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1270006685
 GameObject:
   m_ObjectHideFlags: 0
@@ -969,6 +1008,7 @@ GameObject:
   - component: {fileID: 1270006686}
   - component: {fileID: 1270006688}
   - component: {fileID: 1270006687}
+  - component: {fileID: 1270006689}
   m_Layer: 0
   m_Name: Left
   m_TagString: Gate
@@ -1038,6 +1078,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1270006689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270006685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f45de294241ea14687c984bc34c687a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1349124387
 GameObject:
   m_ObjectHideFlags: 0

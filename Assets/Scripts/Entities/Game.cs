@@ -25,6 +25,12 @@ public class Game : Entity
         _pong.Init();
         _player.Init();
         _enemy.Init();
+
+        _systems.AddNewIfThereIsNot<MarkerDeleteSystem<TriggeredMarker>>();
+        _systems.AddNewIfThereIsNot<MarkerDeleteSystem<BorderTriggeredMarker>>();
+        _systems.AddNewIfThereIsNot<MarkerDeleteSystem<PaddleTriggeredMarker>>();
+        _systems.AddNewIfThereIsNot<MarkerDeleteSystem<GateTriggeredMarker>>();
+        _systems.AddNewIfThereIsNot<MarkerDeleteSystem<GameStartedMarker>>();
     }
 
     public class Factory : PlaceholderFactory<Game> { }

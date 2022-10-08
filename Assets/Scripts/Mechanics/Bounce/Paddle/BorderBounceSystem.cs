@@ -1,13 +1,13 @@
 ﻿using Leopotam.EcsLite;
 using UnityEngine;
 
-public class PaddleBounceSystem : IEcsRunSystem
+public class BorderBounceSystem : IEcsRunSystem
 {
     public void Run(IEcsSystems systems)
     {
         EcsWorld world = systems.GetWorld();
 
-        var filter = world.Filter<Moveable>().Inc<WallTriggeredMarker>().End();
+        var filter = world.Filter<PongMarker>().Inc<Moveable>().Inc<BorderTriggeredMarker>().End();
 
         foreach (int entity in filter)
         {

@@ -13,15 +13,12 @@ public class Enemy : SpawnableEntity
         int entity = _world.NewEntity();
         var enemy_SO = (Enemy_SO)_entity_SO;
 
-        _world.Add(entity, enemy_SO.moveLimit);
-        _world.Add(entity, enemy_SO.inputComponent);
         _world.Add(entity, enemy_SO.pongFollowable);
     }
 
     protected override void AddSystems()
     {
         _systems.AddNewIfThereIsNot<PongFollowSystem>();
-        _systems.AddNewIfThereIsNot<VerticalPositionLimitationSystem>();
     }
 
     public class Factory : PlaceholderFactory<Enemy> { }
