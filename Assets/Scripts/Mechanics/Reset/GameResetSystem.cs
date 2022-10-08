@@ -10,7 +10,7 @@ public class GameResetSystem : IEcsRunSystem
 
         foreach (int entity in filter)
         {
-            world.Add<GameStartedMarker>(entity);
+            world.Add<Resetable>(entity);
         }
     }
 }

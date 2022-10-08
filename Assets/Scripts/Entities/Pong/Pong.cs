@@ -17,7 +17,6 @@ public class Pong : SpawnableEntity
         _world.Add(entity, pong_SO.pongSounds);
         _world.Add(entity, pong_SO.triggerable);
 
-        _world.Add<GameStartedMarker>(entity);
         _world.Add<PongMarker>(entity);
     }
 

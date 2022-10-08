@@ -11,6 +11,7 @@ public class Pong_SO : Entity_SO
     {
         moveable.Transform = gameObject.transform;
         moveable.StartPosition = startPosition;
+        moveable.Direction = Vector2.right; 
 
         pongSounds.AudioSource = gameObject.GetComponent<AudioSource>();
 

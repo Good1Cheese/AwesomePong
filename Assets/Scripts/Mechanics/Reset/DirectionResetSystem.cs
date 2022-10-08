@@ -7,7 +7,7 @@ public class DirectionResetSystem : IEcsRunSystem
     {
         EcsWorld world = systems.GetWorld();
 
-        EcsFilter filter = world.Filter<PongMarker>().Inc<Moveable>().Inc<GameStartedMarker>().End();
+        EcsFilter filter = world.Filter<PongMarker>().Inc<Moveable>().Inc<Resetable>().End();
 
         foreach (int entity in filter)
         {
