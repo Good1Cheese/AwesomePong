@@ -1,5 +1,4 @@
 ﻿using Leopotam.EcsLite;
-using UnityEngine;
 
 public class TriggerDetectorSystem : IEcsInitSystem, IEcsDestroySystem
 {
@@ -15,19 +14,21 @@ public class TriggerDetectorSystem : IEcsInitSystem, IEcsDestroySystem
         {
             ref Triggerable triggerable = ref _world.Get<Triggerable>(entity);
 
-            triggerable.Detector.OnTriggerEnter += Detect;
+            triggerable.Detector.Triggered += Detect;
         }
     }
 
-    private void Detect(ObstacleTrigger triggerable)
+    private void Detect(ObstacleTrigger trigger)
     {
-        Debug.Log("Triggered");
-
         var filter = _world.Filter<Moveable>().Inc<Triggerable>().End();
 
         foreach (int entity in filter)
         {
-            triggerable.Trigger(_world, entity);
+            ref Triggerable triggerable = ref _world.Get<Triggerable>(entity);
+
+            if (!triggerable.Detector.Detected) { continue; }
+
+            trigger.Trigger(_world, entity);
 
             _world.Add<TriggeredMarker>(entity);
         }
@@ -41,7 +42,7 @@ public class TriggerDetectorSystem : IEcsInitSystem, IEcsDestroySystem
         {
             ref Triggerable triggerable = ref _world.Get<Triggerable>(entity);
 
-            triggerable.Detector.OnTriggerEnter -= Detect;
+            triggerable.Detector.Triggered -= Detect;
         }
     }
 }
