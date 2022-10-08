@@ -6,7 +6,6 @@ public class Player_SO : Entity_SO
     public InputComponent inputComponent;
     public Moveable moveable;
     public VerticalPositionLimitation moveLimit;
-    public Triggerable triggerable;
 
     public override void Init(GameObject gameObject)
     {
@@ -16,7 +15,5 @@ public class Player_SO : Entity_SO
 
         moveable.Transform = gameObject.transform;
         moveable.StartPosition = startPosition;
-
-        triggerable.Detector = gameObject.GetComponent<TriggerDetection>();
     }
 }
