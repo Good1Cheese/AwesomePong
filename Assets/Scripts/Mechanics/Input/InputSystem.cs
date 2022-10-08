@@ -7,7 +7,7 @@ public class InputSystem : IEcsRunSystem
     {
         EcsWorld world = systems.GetWorld();
 
-        var filter = world.Filter<Moveable>().Inc<InputComponent>().End();
+        EcsFilter filter = world.Filter<Moveable>().Inc<InputComponent>().End();
 
         foreach (int entity in filter)
         {

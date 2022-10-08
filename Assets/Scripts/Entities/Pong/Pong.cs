@@ -1,6 +1,5 @@
 ﻿using Leopotam.EcsLite;
 using Zenject;
-using static UnityEngine.EventSystems.EventTrigger;
 
 public class Pong : SpawnableEntity
 {

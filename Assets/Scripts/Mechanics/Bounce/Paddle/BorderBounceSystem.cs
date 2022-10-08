@@ -7,7 +7,7 @@ public class BorderBounceSystem : IEcsRunSystem
     {
         EcsWorld world = systems.GetWorld();
 
-        var filter = world.Filter<PongMarker>().Inc<Moveable>().Inc<BorderTriggeredMarker>().End();
+        EcsFilter filter = world.Filter<PongMarker>().Inc<Moveable>().Inc<BorderTriggeredMarker>().End();
 
         foreach (int entity in filter)
         {

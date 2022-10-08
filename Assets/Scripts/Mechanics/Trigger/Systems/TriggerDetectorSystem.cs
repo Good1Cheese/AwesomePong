@@ -8,7 +8,7 @@ public class TriggerDetectorSystem : IEcsInitSystem, IEcsDestroySystem
     {
         _world = systems.GetWorld();
 
-        var filter = _world.Filter<Moveable>().Inc<Triggerable>().End();
+        EcsFilter filter = _world.Filter<Moveable>().Inc<Triggerable>().End();
 
         foreach (int entity in filter)
         {
@@ -20,7 +20,7 @@ public class TriggerDetectorSystem : IEcsInitSystem, IEcsDestroySystem
 
     private void Detect(ObstacleTrigger trigger)
     {
-        var filter = _world.Filter<Moveable>().Inc<Triggerable>().End();
+        EcsFilter filter = _world.Filter<Moveable>().Inc<Triggerable>().End();
 
         foreach (int entity in filter)
         {
@@ -36,7 +36,7 @@ public class TriggerDetectorSystem : IEcsInitSystem, IEcsDestroySystem
 
     public void Destroy(IEcsSystems systems)
     {
-        var filter = _world.Filter<Moveable>().Inc<Triggerable>().End();
+        EcsFilter filter = _world.Filter<Moveable>().Inc<Triggerable>().End();
 
         foreach (int entity in filter)
         {

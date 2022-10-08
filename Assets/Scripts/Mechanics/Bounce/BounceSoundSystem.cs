@@ -6,7 +6,7 @@ public class BounceSoundSystem : IEcsRunSystem
     {
         EcsWorld world = systems.GetWorld();
 
-        var filter = world.Filter<TriggeredMarker>().Inc<PongSounds>().Exc<GateTriggeredMarker>().End();
+        EcsFilter filter = world.Filter<TriggeredMarker>().Inc<PongSounds>().Exc<GateTriggeredMarker>().End();
 
         foreach (int entity in filter)
         {

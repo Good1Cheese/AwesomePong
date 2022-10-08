@@ -4,7 +4,7 @@ using UnityEngine;
 [Serializable]
 public struct Moveable
 {
-    [SerializeField] 
+    [SerializeField]
     private float _velocity;
 
     public Vector2 Move { get; set; }

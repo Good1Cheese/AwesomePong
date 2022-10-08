@@ -7,7 +7,7 @@ public class PaddleBounceSystem : IEcsRunSystem
     {
         EcsWorld world = systems.GetWorld();
 
-        var filter = world.Filter<PongMarker>().Inc<Moveable>().Inc<PaddleTriggeredMarker>().End();
+        EcsFilter filter = world.Filter<PongMarker>().Inc<Moveable>().Inc<PaddleTriggeredMarker>().End();
 
         foreach (int entity in filter)
         {

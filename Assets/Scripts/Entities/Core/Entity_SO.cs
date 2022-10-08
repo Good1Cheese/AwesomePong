@@ -1,5 +1,4 @@
-﻿using Leopotam.EcsLite;
-using UnityEngine;
+﻿using UnityEngine;
 
 public abstract class Entity_SO : ScriptableObject
 {

@@ -1,6 +1,5 @@
 ﻿using Leopotam.EcsLite;
 using UnityEngine;
-using Zenject;
 
 public abstract class SpawnableEntity : Entity
 {

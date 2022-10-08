@@ -6,7 +6,7 @@ public class MarkerDeleteSystem<T> : IEcsRunSystem where T : struct
     {
         EcsWorld world = systems.GetWorld();
 
-        var filter = world.Filter<T>().End();
+        EcsFilter filter = world.Filter<T>().End();
 
         foreach (int entity in filter)
         {

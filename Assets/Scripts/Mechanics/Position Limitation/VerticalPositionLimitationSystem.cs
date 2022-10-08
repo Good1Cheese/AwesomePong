@@ -7,14 +7,14 @@ public class VerticalPositionLimitationSystem : IEcsRunSystem
     {
         EcsWorld world = systems.GetWorld();
 
-        var filter = world.Filter<Moveable>().Inc<VerticalPositionLimitation>().End();
+        EcsFilter filter = world.Filter<Moveable>().Inc<VerticalPositionLimitation>().End();
 
         foreach (int entity in filter)
         {
             ref Moveable moveable = ref world.Get<Moveable>(entity);
             ref VerticalPositionLimitation limit = ref world.Get<VerticalPositionLimitation>(entity);
 
-            var position = moveable.Transform.position;
+            Vector3 position = moveable.Transform.position;
 
             position.y = Mathf.Clamp(position.y, limit.Min, limit.Max);
 

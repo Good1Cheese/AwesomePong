@@ -1,6 +1,5 @@
 ﻿using Leopotam.EcsLite;
 using System.Linq;
-using Unity.VisualScripting;
 
 public static class EcsExtensions
 {
@@ -45,6 +44,6 @@ public static class EcsExtensions
     {
         var systems = ecsSystems.GetAllSystems();
 
-        return systems.Any(s => s as T != null);
+        return systems.Any(s => (s as T) != null);
     }
 }
