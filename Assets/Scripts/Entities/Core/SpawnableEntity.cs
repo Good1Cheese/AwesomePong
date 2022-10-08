@@ -14,7 +14,7 @@ public abstract class SpawnableEntity : Entity
 
     public GameObject Spawn()
     {
-        return Object.Instantiate(_entity_SO.prefab, _entity_SO.startPosition, _entity_SO.startRotation);
+        return Object.Instantiate(_entity_SO.prefab, _entity_SO.startPosition, Quaternion.identity);
     }
 
     public override void Init()

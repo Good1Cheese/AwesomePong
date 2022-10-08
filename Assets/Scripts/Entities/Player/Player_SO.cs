@@ -15,5 +15,6 @@ public class Player_SO : Entity_SO
 
         moveable.Transform = gameObject.transform;
         moveable.StartPosition = startPosition;
+        moveable.CurrentVelocity = moveable.Velocity;
     }
 }

@@ -12,5 +12,6 @@ public struct Moveable
     public Transform Transform { get; set; }
     public Vector2 StartPosition { get; set; }
 
+    public float CurrentVelocity { get; set; }
     public float Velocity => _velocity;
 }

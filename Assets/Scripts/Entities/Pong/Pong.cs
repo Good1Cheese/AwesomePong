@@ -16,6 +16,7 @@ public class Pong : SpawnableEntity
         _world.Add(entity, pong_SO.moveable);
         _world.Add(entity, pong_SO.pongSounds);
         _world.Add(entity, pong_SO.triggerable);
+        _world.Add(entity, pong_SO.acceleratable);
 
         _world.Add<PongMarker>(entity);
     }
@@ -26,11 +27,13 @@ public class Pong : SpawnableEntity
         _systems.AddNewIfThereIsNot<GameResetSystem>();
         _systems.AddNewIfThereIsNot<DirectionResetSystem>();
         _systems.AddNewIfThereIsNot<PositionResetSystem>();
+        _systems.AddNewIfThereIsNot<VelocityResetSystem>();
         _systems.AddNewIfThereIsNot<PaddleBounceSystem>();
         _systems.AddNewIfThereIsNot<BorderBounceSystem>();
         _systems.AddNewIfThereIsNot<BounceSoundSystem>();
         _systems.AddNewIfThereIsNot<GateBounceSoundSystem>();
         _systems.AddNewIfThereIsNot<MoveSystem>();
+        _systems.AddNewIfThereIsNot<AccelerateSystem>();
     }
 
     public class Factory : PlaceholderFactory<Pong> { }

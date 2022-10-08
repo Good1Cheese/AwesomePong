@@ -20,3 +20,7 @@ MonoBehaviour:
   pongSounds:
     _wallBounceClip: {fileID: 8300000, guid: ae0fabefc0e941143a9bead92c7034e6, type: 3}
     _scoreClip: {fileID: 8300000, guid: ab1f1c59ab6b328448f5e58548e4bd2b, type: 3}
+  acceleratable:
+    _progress: 1.15
+    _min: 15
+    _max: 30
