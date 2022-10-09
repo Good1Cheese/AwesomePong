@@ -6,7 +6,7 @@ public class PositionResetSystem : IEcsRunSystem
     {
         EcsWorld world = systems.GetWorld();
 
-        EcsFilter filter = world.Filter<Moveable>().Inc<Resetable>().End();
+        EcsFilter filter = world.Filter<Moveable>().Inc<ResetableMarker>().End();
 
         foreach (int entity in filter)
         {

@@ -6,7 +6,7 @@ public class VelocityResetSystem : IEcsRunSystem
     {
         EcsWorld world = systems.GetWorld();
 
-        EcsFilter filter = world.Filter<Acceleratable>().Inc<Moveable>().Inc<Resetable>().End();
+        EcsFilter filter = world.Filter<Acceleratable>().Inc<Moveable>().Inc<ResetableMarker>().End();
 
         foreach (int entity in filter)
         {

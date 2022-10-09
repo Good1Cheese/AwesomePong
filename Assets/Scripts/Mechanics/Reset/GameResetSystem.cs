@@ -6,11 +6,11 @@ public class GameResetSystem : IEcsRunSystem
     {
         EcsWorld world = systems.GetWorld();
 
-        EcsFilter filter = world.Filter<Moveable>().Inc<GateTriggeredMarker>().End();
+        EcsFilter filter = world.Filter<GateTriggeredMarker>().End();
 
         foreach (int entity in filter)
         {
-            world.Add<Resetable>(entity);
+            world.Add<ResetableMarker>(entity);
         }
     }
 }

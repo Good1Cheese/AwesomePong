@@ -30,7 +30,7 @@ public class Game : Entity
         _systems.AddNewIfThereIsNot<MarkerDeleteSystem<BorderTriggeredMarker>>();
         _systems.AddNewIfThereIsNot<MarkerDeleteSystem<PaddleTriggeredMarker>>();
         _systems.AddNewIfThereIsNot<MarkerDeleteSystem<GateTriggeredMarker>>();
-        _systems.AddNewIfThereIsNot<MarkerDeleteSystem<Resetable>>();
+        _systems.AddNewIfThereIsNot<MarkerDeleteSystem<ResetableMarker>>();
     }
 
     public class Factory : PlaceholderFactory<Game> { }

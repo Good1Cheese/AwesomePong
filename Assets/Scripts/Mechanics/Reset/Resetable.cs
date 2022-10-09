@@ -1,3 +1,3 @@
-﻿public struct Resetable
+﻿public struct ResetableMarker
 {
 }
