@@ -5,7 +5,7 @@ public class Player_SO : Entity_SO
 {
     public InputComponent inputComponent;
     public Moveable moveable;
-    public VerticalPositionLimitation moveLimit;
+    public VerticalPositionClamp moveLimit;
 
     public override void Init(GameObject gameObject)
     {

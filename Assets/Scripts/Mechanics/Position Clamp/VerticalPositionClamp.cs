@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [Serializable]
-public struct VerticalPositionLimitation
+public struct VerticalPositionClamp
 {
     [SerializeField]
     private float _max;

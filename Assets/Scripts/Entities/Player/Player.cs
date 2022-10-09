@@ -22,7 +22,7 @@ public class Player : SpawnableEntity
     {
         _systems.AddNewIfThereIsNot<InputSystem>();
         _systems.AddNewIfThereIsNot<MovementSystem>();
-        _systems.AddNewIfThereIsNot<VerticalPositionLimitationSystem>();
+        _systems.AddNewIfThereIsNot<VerticalPositionClampSystem>();
     }
 
     public class Factory : PlaceholderFactory<Player> { }
