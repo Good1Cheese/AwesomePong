@@ -14,12 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 3990536737805802147, guid: 605e71f389cf5924187b124b88df3c29, type: 3}
   startPosition: {x: 0, y: 0}
-  startRotation: {x: 0, y: 0, z: 0, w: 0}
   moveable:
     _velocity: 15
   pongSounds:
     _wallBounceClip: {fileID: 8300000, guid: ae0fabefc0e941143a9bead92c7034e6, type: 3}
     _scoreClip: {fileID: 8300000, guid: ab1f1c59ab6b328448f5e58548e4bd2b, type: 3}
+  pongPaddleBounceable:
+    _horizontalClamp: 0.5
+    _verticalClamp: 0.5
   acceleratable:
     _progress: 1.15
     _min: 15

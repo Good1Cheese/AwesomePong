@@ -15,6 +15,7 @@ public class Pong : SpawnableEntity
 
         _world.Add(entity, pong_SO.moveable);
         _world.Add(entity, pong_SO.pongSounds);
+        _world.Add(entity, pong_SO.pongPaddleBounceable);
         _world.Add(entity, pong_SO.triggerable);
         _world.Add(entity, pong_SO.acceleratable);
 
