@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 5498826625282164859, guid: 6d40d2c3ae990154fad8f1ce54e2dcdd, type: 3}
   startPosition: {x: -16, y: 0}
-  startRotation: {x: 0, y: 0, z: 0, w: 0}
   moveable:
-    _velocity: 15
+    _velocity: 25
   moveLimit:
     _max: 11
     _min: -11
