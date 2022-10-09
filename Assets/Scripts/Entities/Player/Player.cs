@@ -21,7 +21,7 @@ public class Player : SpawnableEntity
     protected override void AddSystems()
     {
         _systems.AddNewIfThereIsNot<InputSystem>();
-        _systems.AddNewIfThereIsNot<MoveSystem>();
+        _systems.AddNewIfThereIsNot<MovementSystem>();
         _systems.AddNewIfThereIsNot<VerticalPositionLimitationSystem>();
     }
 

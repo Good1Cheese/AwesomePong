@@ -32,7 +32,7 @@ public class Pong : SpawnableEntity
         _systems.AddNewIfThereIsNot<BorderBounceSystem>();
         _systems.AddNewIfThereIsNot<BounceSoundSystem>();
         _systems.AddNewIfThereIsNot<GateBounceSoundSystem>();
-        _systems.AddNewIfThereIsNot<MoveSystem>();
+        _systems.AddNewIfThereIsNot<MovementSystem>();
         _systems.AddNewIfThereIsNot<AccelerateSystem>();
     }
 

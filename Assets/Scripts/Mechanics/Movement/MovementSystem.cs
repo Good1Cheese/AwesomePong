@@ -1,7 +1,7 @@
 ﻿using Leopotam.EcsLite;
 using UnityEngine;
 
-public class MoveSystem : IEcsRunSystem
+public class MovementSystem : IEcsRunSystem
 {
     public void Run(IEcsSystems systems)
     {
