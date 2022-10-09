@@ -14,6 +14,9 @@ public class Enemy : SpawnableEntity
         var enemy_SO = (Enemy_SO)_entity_SO;
 
         _world.Add(entity, enemy_SO.pongFollowable);
+
+        _world.Add<EnemyMarker>(entity);
+        _world.Add<Scoreable>(entity);
     }
 
     protected override void AddSystems()

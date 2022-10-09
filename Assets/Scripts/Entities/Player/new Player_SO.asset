@@ -17,5 +17,5 @@ MonoBehaviour:
   moveable:
     _velocity: 25
   moveLimit:
-    _max: 10
-    _min: -10
+    _max: 9.5
+    _min: -9.5

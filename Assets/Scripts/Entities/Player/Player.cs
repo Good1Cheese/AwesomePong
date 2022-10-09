@@ -16,6 +16,9 @@ public class Player : SpawnableEntity
         _world.Add(entity, player_SO.moveable);
         _world.Add(entity, player_SO.moveLimit);
         _world.Add(entity, player_SO.inputComponent);
+
+        _world.Add<PlayerMarker>(entity);
+        _world.Add<Scoreable>(entity);
     }
 
     protected override void AddSystems()
