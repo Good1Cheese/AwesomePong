@@ -26,6 +26,22 @@ public class Game : Entity
         _player.Init();
         _enemy.Init();
 
+        _systems.AddNewIfThereIsNot<TriggerDetectorSystem>();
+
+        AddResetSystems();
+        AddMarkersDeleteSystems();
+    }
+
+    private void AddResetSystems()
+    {
+        _systems.AddNewIfThereIsNot<GameResetSystem>();
+        _systems.AddNewIfThereIsNot<DirectionResetSystem>();
+        _systems.AddNewIfThereIsNot<PositionResetSystem>();
+        _systems.AddNewIfThereIsNot<VelocityResetSystem>();
+    }
+
+    private void AddMarkersDeleteSystems()
+    {
         _systems.AddNewIfThereIsNot<MarkerDeleteSystem<TriggeredMarker>>();
         _systems.AddNewIfThereIsNot<MarkerDeleteSystem<BorderTriggeredMarker>>();
         _systems.AddNewIfThereIsNot<MarkerDeleteSystem<PaddleTriggeredMarker>>();

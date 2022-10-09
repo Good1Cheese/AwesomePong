@@ -24,11 +24,6 @@ public class Pong : SpawnableEntity
 
     protected override void AddSystems()
     {
-        _systems.AddNewIfThereIsNot<TriggerDetectorSystem>();
-        _systems.AddNewIfThereIsNot<GameResetSystem>();
-        _systems.AddNewIfThereIsNot<DirectionResetSystem>();
-        _systems.AddNewIfThereIsNot<PositionResetSystem>();
-        _systems.AddNewIfThereIsNot<VelocityResetSystem>();
         _systems.AddNewIfThereIsNot<PaddleBounceSystem>();
         _systems.AddNewIfThereIsNot<BorderBounceSystem>();
         _systems.AddNewIfThereIsNot<BounceSoundSystem>();
