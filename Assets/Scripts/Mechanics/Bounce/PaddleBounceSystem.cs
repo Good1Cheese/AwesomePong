@@ -20,22 +20,10 @@ public class PaddleBounceSystem : IEcsRunSystem
 
             Vector3 direction = (pong - paddle).normalized;
 
-            Debug(pong, direction, Color.red);
-
             direction.x = Mathf.Clamp(direction.x, -bounceable.HorizontalClamp, bounceable.HorizontalClamp);
             direction.y = Mathf.Clamp(direction.y, -bounceable.VerticalClamp, bounceable.VerticalClamp);
 
-            Debug(pong, direction, Color.blue);
-
             moveable.Direction = direction;
-
-            UnityEngine.Debug.Break();
         }
-    }
-
-    private static void Debug(in Vector3 start, in Vector3 direction, Color color)
-    {
-        UnityEngine.Debug.DrawLine(direction, Vector2.zero, color);
-        UnityEngine.Debug.Log(direction);
     }
 }
