@@ -12,11 +12,14 @@ public class PaddleBounceSystem : IEcsRunSystem
         foreach (int entity in filter)
         {
             ref Moveable moveable = ref world.Get<Moveable>(entity);
+            ref PaddleTriggeredMarker triggered = ref world.Get<PaddleTriggeredMarker>(entity);
 
-            Vector2 direction = moveable.Direction;
-            direction.x = -direction.x;
+            Vector3 paddle = triggered.Renderer.bounds.center;
+            Vector3 pong = moveable.Transform.position;
 
-            moveable.Direction = direction;
+            Vector3 direction = pong - paddle;
+
+            moveable.Direction = direction.normalized;
         }
     }
 }
