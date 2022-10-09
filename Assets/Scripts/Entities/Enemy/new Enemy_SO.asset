@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ca703d35e2b8db4f82315bb58501d27, type: 3}
   m_Name: new Enemy_SO
   m_EditorClassIdentifier: 
-  prefab: {fileID: 5498826625282164859, guid: 4127e8708f76ac7408a60c5f90ac4386, type: 3}
+  prefab: {fileID: 5498826625282164859, guid: 6d40d2c3ae990154fad8f1ce54e2dcdd, type: 3}
   startPosition: {x: 16, y: 0}
-  startRotation: {x: 0, y: 0, z: 0, w: 0}
