@@ -7,12 +7,12 @@ public class PaddleBounceSystem : IEcsRunSystem
     {
         EcsWorld world = systems.GetWorld();
 
-        var filter = world.Filter<PongPaddleBounceable>().Inc<Moveable>().Inc<PaddleTriggeredMarker>().End();
+        var filter = world.Filter<PaddleBounceable>().Inc<Moveable>().Inc<PaddleTriggeredMarker>().End();
 
         foreach (int entity in filter)
         {
             ref var moveable = ref world.Get<Moveable>(entity);
-            ref var bounceable = ref world.Get<PongPaddleBounceable>(entity);
+            ref var bounceable = ref world.Get<PaddleBounceable>(entity);
             ref var triggered = ref world.Get<PaddleTriggeredMarker>(entity);
 
             Vector3 paddle = triggered.Renderer.bounds.center;
@@ -20,10 +20,10 @@ public class PaddleBounceSystem : IEcsRunSystem
 
             Vector3 direction = (pong - paddle).normalized;
 
-            direction.x = Mathf.Clamp(direction.x, -bounceable.HorizontalClamp, bounceable.HorizontalClamp);
-            direction.y = Mathf.Clamp(direction.y, -bounceable.VerticalClamp, bounceable.VerticalClamp);
+            direction.x = Mathf.Clamp(direction.x, -bounceable.XDirectionValue, bounceable.XDirectionValue);
+            direction.y = Mathf.Clamp(direction.y, -bounceable.YDirectionClamp, bounceable.YDirectionClamp);
 
-            moveable.Direction = direction;
+            moveable.Direction = direction.normalized;
         }
     }
 }

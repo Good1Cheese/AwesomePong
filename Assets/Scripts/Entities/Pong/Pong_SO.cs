@@ -5,7 +5,7 @@ public class Pong_SO : Entity_SO
 {
     public Moveable moveable;
     public PongSounds pongSounds;
-    public PongPaddleBounceable pongPaddleBounceable;
+    public PaddleBounceable pongPaddleBounceable;
     public Triggerable triggerable;
     public Acceleratable acceleratable;
 
