@@ -16,7 +16,7 @@ public class VerticalPositionClampSystem : IEcsRunSystem
 
             Vector3 position = moveable.Transform.position;
 
-            position.y = Mathf.Clamp(position.y, clamp.Min, clamp.Max);
+            position.y = Mathf.Clamp(position.y, -clamp.Clamp, clamp.Clamp);
 
             moveable.Transform.position = position;
         }

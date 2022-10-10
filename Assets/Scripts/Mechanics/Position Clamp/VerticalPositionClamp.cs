@@ -4,12 +4,7 @@ using UnityEngine;
 [Serializable]
 public struct VerticalPositionClamp
 {
-    [SerializeField]
-    private float _max;
+    [SerializeField] private float _clamp;
 
-    [SerializeField]
-    private float _min;
-
-    public float Max => _max;
-    public float Min => _min;
+    public float Clamp => _clamp;
 }
