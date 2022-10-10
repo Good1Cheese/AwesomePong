@@ -3,10 +3,10 @@ using TMPro;
 using UnityEngine;
 using Zenject;
 
-public class PlayerScoreUI : MonoBehaviour
+public abstract class EntityScoreUI : MonoBehaviour
 {
-    private EcsWorld _world;
-    private TextMeshProUGUI _textMeshPro;
+    protected EcsWorld _world;
+    protected TextMeshProUGUI _textMeshPro;
 
     [Inject]
     public void Construct(EcsWorld ecsWorld)
@@ -17,7 +17,7 @@ public class PlayerScoreUI : MonoBehaviour
 
     private void Update()
     {
-        EcsFilter filter = _world.Filter<PlayerMarker>().Inc<Scoreable>().End();
+        EcsFilter filter = GetFilter();
 
         foreach (int entity in filter)
         {
@@ -26,4 +26,6 @@ public class PlayerScoreUI : MonoBehaviour
             _textMeshPro.text = scoreable.Score.ToString();
         }
     }
+
+    protected abstract EcsFilter GetFilter();
 }
