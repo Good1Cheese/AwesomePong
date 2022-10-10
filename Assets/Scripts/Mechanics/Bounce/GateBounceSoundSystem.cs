@@ -6,11 +6,11 @@ public class GateBounceSoundSystem : IEcsRunSystem
     {
         EcsWorld world = systems.GetWorld();
 
-        EcsFilter filter = world.Filter<PongMarker>().Inc<PongSounds>().Inc<GateTriggeredMarker>().End();
+        var filter = world.Filter<PongMarker>().Inc<PongSounds>().Inc<GateTriggeredMarker>().End();
 
         foreach (int entity in filter)
         {
-            ref PongSounds sounds = ref world.Get<PongSounds>(entity);
+            ref var sounds = ref world.Get<PongSounds>(entity);
 
             sounds.AudioSource.PlayOneShot(sounds.ScoreClip);
         }

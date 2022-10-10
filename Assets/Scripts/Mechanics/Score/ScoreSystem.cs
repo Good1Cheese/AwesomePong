@@ -7,11 +7,11 @@ public class ScoreSystem : IEcsRunSystem
     {
         EcsWorld world = systems.GetWorld();
 
-        EcsFilter filter = world.Filter<Scoreable>().Inc<ScoreMarker>().End();
+        var filter = world.Filter<Scoreable>().Inc<ScoreMarker>().End();
 
         foreach (int entity in filter)
         {
-            ref Scoreable scoreable = ref world.Get<Scoreable>(entity);
+            ref var scoreable = ref world.Get<Scoreable>(entity);
 
             scoreable.Score++;
         }

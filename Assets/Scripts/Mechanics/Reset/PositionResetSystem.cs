@@ -6,11 +6,11 @@ public class PositionResetSystem : IEcsRunSystem
     {
         EcsWorld world = systems.GetWorld();
 
-        EcsFilter filter = world.Filter<Moveable>().Inc<ResetableMarker>().End();
+        var filter = world.Filter<Moveable>().Inc<ResetableMarker>().End();
 
         foreach (int entity in filter)
         {
-            ref Moveable moveable = ref world.Get<Moveable>(entity);
+            ref var moveable = ref world.Get<Moveable>(entity);
 
             moveable.Transform.position = moveable.StartPosition;
         }

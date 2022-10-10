@@ -6,7 +6,7 @@ public class GameResetSystem : IEcsRunSystem
     {
         EcsWorld world = systems.GetWorld();
 
-        EcsFilter filter = world.Filter<GateTriggeredMarker>().End();
+        var filter = world.Filter<GateTriggeredMarker>().End();
 
         foreach (int entity in filter)
         {

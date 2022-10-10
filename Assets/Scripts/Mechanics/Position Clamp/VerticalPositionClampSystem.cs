@@ -7,12 +7,12 @@ public class VerticalPositionClampSystem : IEcsRunSystem
     {
         EcsWorld world = systems.GetWorld();
 
-        EcsFilter filter = world.Filter<Moveable>().Inc<VerticalPositionClamp>().End();
+        var filter = world.Filter<Moveable>().Inc<VerticalPositionClamp>().End();
 
         foreach (int entity in filter)
         {
-            ref Moveable moveable = ref world.Get<Moveable>(entity);
-            ref VerticalPositionClamp clamp = ref world.Get<VerticalPositionClamp>(entity);
+            ref var moveable = ref world.Get<Moveable>(entity);
+            ref var clamp = ref world.Get<VerticalPositionClamp>(entity);
 
             Vector3 position = moveable.Transform.position;
 

@@ -7,16 +7,16 @@ public class PongFollowSystem : IEcsRunSystem
     {
         EcsWorld world = systems.GetWorld();
 
-        EcsFilter pongFilter = world.Filter<PongMarker>().Inc<Moveable>().End();
-        EcsFilter followableFilter = world.Filter<PongFollowable>().End();
+        var pongFilter = world.Filter<PongMarker>().Inc<Moveable>().End();
+        var followableFilter = world.Filter<PongFollowable>().End();
 
         foreach (int pongEntity in pongFilter)
         {
-            ref Moveable pong = ref world.Get<Moveable>(pongEntity);
+            ref var pong = ref world.Get<Moveable>(pongEntity);
 
             foreach (int followableEntity in followableFilter)
             {
-                ref PongFollowable followable = ref world.Get<PongFollowable>(followableEntity);
+                ref var followable = ref world.Get<PongFollowable>(followableEntity);
 
                 Vector2 position = followable.Transform.position;
 

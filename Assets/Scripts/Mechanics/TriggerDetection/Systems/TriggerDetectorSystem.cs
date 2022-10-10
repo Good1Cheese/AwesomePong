@@ -8,11 +8,11 @@ public class TriggerDetectorSystem : IEcsInitSystem, IEcsDestroySystem
     {
         _world = systems.GetWorld();
 
-        EcsFilter filter = _world.Filter<Moveable>().Inc<Triggerable>().End();
+        var filter = _world.Filter<Moveable>().Inc<Triggerable>().End();
 
         foreach (int entity in filter)
         {
-            ref Triggerable triggerable = ref _world.Get<Triggerable>(entity);
+            ref var triggerable = ref _world.Get<Triggerable>(entity);
 
             triggerable.Detector.Triggered += Detect;
         }
@@ -20,11 +20,11 @@ public class TriggerDetectorSystem : IEcsInitSystem, IEcsDestroySystem
 
     private void Detect(ObstacleTrigger trigger)
     {
-        EcsFilter filter = _world.Filter<Moveable>().Inc<Triggerable>().End();
+        var filter = _world.Filter<Moveable>().Inc<Triggerable>().End();
 
         foreach (int entity in filter)
         {
-            ref Triggerable triggerable = ref _world.Get<Triggerable>(entity);
+            ref var triggerable = ref _world.Get<Triggerable>(entity);
 
             if (!triggerable.Detector.Detected) { continue; }
 
@@ -36,11 +36,11 @@ public class TriggerDetectorSystem : IEcsInitSystem, IEcsDestroySystem
 
     public void Destroy(IEcsSystems systems)
     {
-        EcsFilter filter = _world.Filter<Moveable>().Inc<Triggerable>().End();
+        var filter = _world.Filter<Moveable>().Inc<Triggerable>().End();
 
         foreach (int entity in filter)
         {
-            ref Triggerable triggerable = ref _world.Get<Triggerable>(entity);
+            ref var triggerable = ref _world.Get<Triggerable>(entity);
 
             triggerable.Detector.Triggered -= Detect;
         }

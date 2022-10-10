@@ -7,12 +7,12 @@ public class AccelerateSystem : IEcsRunSystem
     {
         EcsWorld world = systems.GetWorld();
 
-        EcsFilter filter = world.Filter<Acceleratable>().Inc<Moveable>().Inc<TriggeredMarker>().Exc<GateTriggeredMarker>().End();
+        var filter = world.Filter<Acceleratable>().Inc<Moveable>().Inc<TriggeredMarker>().Exc<GateTriggeredMarker>().End();
 
         foreach (int entity in filter)
         {
-            ref Moveable moveable = ref world.Get<Moveable>(entity);
-            ref Acceleratable acceleratable = ref world.Get<Acceleratable>(entity);
+            ref var moveable = ref world.Get<Moveable>(entity);
+            ref var acceleratable = ref world.Get<Acceleratable>(entity);
 
             moveable.CurrentVelocity *= acceleratable.Progress;
 
